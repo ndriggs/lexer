@@ -1,14 +1,26 @@
 #include "Token.h"
-#include "Lexer.h"
 #include <string>
 #include <iostream>
+#include "Comment.h"
+#include "NoEndComment.h"
+#include "EndOfFile.h"
+#include "String.h"
+#include "NotAString.h"
+#include "ID.h"
 
 using namespace std;
 
 
 
 int main(){
+	
+	Identity com_mach;
+	string inp = "word ";
+	int length;
+	length = com_mach.Read(inp);
+	cout << length << endl;
 
+	/*
 	TokenType token;
 	token = COMMA;
 	TokenType token2;
@@ -19,6 +31,6 @@ int main(){
 	Lexer l;
 	l.addToken(a);
 	l.addToken(b);
-	cout << l.print() << endl;
+	cout << l.print() << endl; */
 	return 0;
 }

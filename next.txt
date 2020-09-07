@@ -10,6 +10,7 @@ Is creating a machines vector in the Lexer constructor the right way to do it?
 
 Next to do:
 Make an ID, string, comment, and end of file class
+also comment block that didn't end or string that didn't close class
 Make the constructor for the Lexer where it creates the machines vector 
 Create the Lexer Run function
 
