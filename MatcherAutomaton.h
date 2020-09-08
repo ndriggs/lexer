@@ -9,7 +9,8 @@ private:
 	string toMatch;
 
 public:
-	MatcherAutomaton(string toMatch); //before also had TokenType type
-	int Read(const string& input);
+	MatcherAutomaton(){};
+	MatcherAutomaton(string toMatch, TokenType type); //before also had TokenType type
+	virtual int Read(const string& input);
 };
 

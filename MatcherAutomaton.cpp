@@ -2,8 +2,9 @@
 
 using namespace std;
 
-MatcherAutomaton::MatcherAutomaton(string toMatch) {
+MatcherAutomaton::MatcherAutomaton(string toMatch, TokenType type) {
 	this->toMatch = toMatch;
+	this->type = type;
 }
 
 int MatcherAutomaton::Read(const string& input) {
@@ -15,7 +16,7 @@ int MatcherAutomaton::Read(const string& input) {
 		}
 	}
 	if (isMatch) {
-		inputRead = toMatch.size()
+		inputRead = toMatch.size();
 	}
 	return inputRead;
 }
