@@ -1,8 +1,0 @@
-Automaton
-Lexer
-Token
-MatcherAutomaton
-IDAutomaton
-StringAutomaton
-BlockAutomaton
-CommentAutomaton

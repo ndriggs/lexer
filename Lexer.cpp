@@ -1,4 +1,5 @@
 #include "Lexer.h"
+#include <iostream>
 
 using namespace std;
 
@@ -41,6 +42,11 @@ void Lexer::Run(string input){
 	int lineNumber = 1;
 	int maxNewLines = 0;
 	while(input.size() > 0){
+		while((input[0] == '\n') || (input[0] == '\t') || (input[0] == ' ')){ 
+			if(input[0] == '\n') 
+				lineNumber += 1;
+			input.erase(0,1);
+		}
 		int maxRead = 0;
 		Automaton* maxMachine = machines[0];
 		for(int i = 0; i < machines.size(); i++){
@@ -57,9 +63,13 @@ void Lexer::Run(string input){
 			tokens.push_back(*newToken);
 		} else {
 			maxRead = 1;
-			Token newToken(UNDEFINED, input.substr(0, maxRead), lineNumber);
-			tokens.push_back(newToken);	
+			Token undefToken(UNDEFINED, input.substr(0, maxRead), lineNumber);
+			tokens.push_back(undefToken);	
 		}
 		input.erase(0, maxRead);
 	}
+	tokens.pop_back();
+	Token end_token(END_OF_FILE, "", lineNumber);
+	tokens.push_back(end_token);
+	
 }

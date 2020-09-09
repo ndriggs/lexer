@@ -10,7 +10,7 @@ int Identity::Read(const string& input){
 		return 0;
 	}
 	for(int i = 1; i < input.size(); i++){
-		if((input[i] == ' ') || (input[i] == '\n')){
+		if((!isalpha(input[i])) && (!isdigit(input[i]))){
 			return i;
 		}
 	}

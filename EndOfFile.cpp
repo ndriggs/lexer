@@ -2,11 +2,11 @@
 #include <string>
 
 EndOfFile::EndOfFile(){
-	type = UNDEFINED;
+	type = END_OF_FILE;
 }
 
 int EndOfFile::Read(const string& input){
-	if(false/*input.eof()*/){ // need to make sure input is an ifstream
+	if(input.size() == 0){ // need to make sure input is an ifstream
 		return 1;
 	} else {
 		return 0;

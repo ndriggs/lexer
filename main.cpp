@@ -1,7 +1,7 @@
 #include "Token.h"
 #include <string>
 #include <iostream>
-#include <ifstream>
+#include <fstream>
 #include "Comment.h"
 #include "NoEndComment.h"
 #include "EndOfFile.h"
@@ -13,13 +13,17 @@ using namespace std;
 
 
 
-int main(){
-	
-	
+int main(int argc, char **argv){	
+	ifstream file(argv[1]);		
+	string line;
+	string input;
+	while(getline(file, line)){
+		input += line;
+		input.push_back('\n');
+	}
+	input.push_back(EOF);
 	Lexer l;
-	string input = ",\n'a string'\n# a comment\nSchemes\nFactsRules\n::-\n\n\n";
 	l.Run(input);	
 	cout << l.print() << endl;
-
 	return 0;
 }

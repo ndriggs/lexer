@@ -20,7 +20,7 @@ const char* TokenNames[] = {
 	"STRING",
 	"COMMENT",
 	"UNDEFINED",
-	"END_FILE"
+	"EOF"
 };
 
 Token::Token(TokenType type, string input, int line){

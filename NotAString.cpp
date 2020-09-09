@@ -13,6 +13,8 @@ int NotAString::Read(const string& input){
 		if(input[i] == '\''){
 			return 0;
 		}
+		if(input[i] == '\n')
+			return i + 1;
 	}
-	return input.size();
+	return 0;
 }
