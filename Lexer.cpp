@@ -31,7 +31,7 @@ void Lexer::addToken(Token tolkien){
 
 string Lexer::print(){
 	stringstream str;
-	for(int i = 0; i < tokens.size(); i++){                          
+	for(int i = 0; (unsigned)i < tokens.size(); i++){                          
 		str << tokens[i].out() << endl;		
 	}
 	str << "Total Tokens = " << tokens.size();
@@ -49,7 +49,7 @@ void Lexer::Run(string input){
 		}
 		int maxRead = 0;
 		Automaton* maxMachine = machines[0];
-		for(int i = 0; i < machines.size(); i++){
+		for(int i = 0; (unsigned)i < machines.size(); i++){
 			int inputRead = machines[i]->Read(input);
 			if(inputRead > maxRead) {
 				maxRead = inputRead;

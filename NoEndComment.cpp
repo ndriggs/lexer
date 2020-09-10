@@ -10,7 +10,7 @@ int NoEndComment::Read(const string& input){
 	if(input.substr(0,2) != "#|"){
 		return 0;
 	}
-	for(int i = 2; i < input.size(); i++){
+	for(int i = 2; (unsigned)i < input.size(); i++){
 		if(input[i] == '\n')
 			newLines += 1;
 		if(input.substr(i,2) == "|#")

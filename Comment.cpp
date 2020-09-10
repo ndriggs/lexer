@@ -7,14 +7,13 @@ Comment::Comment(){
 }
 
 int Comment::Read(const string& input){
-	bool isMatch = true;
 	int inputRead = 0;
 	newLines = 0;
 	if(input[0] != '#'){
 		return 0;
 	}
 	if(input[1] == '|'){
-		for(int i = 2; i < input.size(); i++){
+		for(int i = 2; (unsigned)i < input.size(); i++){
 			if(input[i] == '\n')
 				newLines += 1;
 			if((input[i] == '|') && (input[i+1] == '#')){

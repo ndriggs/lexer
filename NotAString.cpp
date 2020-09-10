@@ -9,7 +9,7 @@ int NotAString::Read(const string& input){
 	if(input[0] != '\''){
 		return 0;
 	}
-	for(int i = 1; i < input.size(); i++){
+	for(int i = 1; (unsigned)i < input.size(); i++){
 		if(input[i] == '\''){
 			return 0;
 		}
