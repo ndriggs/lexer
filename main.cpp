@@ -14,16 +14,17 @@ using namespace std;
 
 
 int main(int argc, char **argv){	
-	ifstream file(argv[1]);		
+	ifstream in_file(argv[1]);		
 	string line;
 	string input;
-	while(getline(file, line)){
+	while(getline(in_file, line)){
 		input += line;
 		input.push_back('\n');
 	}
 	input.push_back(EOF);
 	Lexer l;
-	l.Run(input);	
-	cout << l.print() << endl;
+	l.Run(input);
+	ofstream out_file("tokens.txt");
+	out_file << l.print();
 	return 0;
 }
